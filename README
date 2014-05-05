@@ -1,0 +1,3 @@
+HowTo set:
+  $ git clone https://github.com/snaiffer/bashrc.git bashrc
+  $ sed -i 1i"source $PWD/bashrc/bashrc" .bashrc
