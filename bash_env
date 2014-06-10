@@ -6,8 +6,6 @@ PS1="\[\033[0;33m\]\h@\u:\l \[\033[1;37m\]\w \n\`if [ \$? = 0 ]; then echo \[\e[
 shopt -s cdspell
 # For correcting misprint in command argument. For example: form cd /Usr to cd /usr
 shopt -s nocaseglob
-# Import aliases to non-interact mode of bash
-#shopt -s expand_aliases
 
 export EDITOR=vim
 
