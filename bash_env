@@ -7,7 +7,7 @@ shopt -s cdspell
 # For correcting misprint in command argument. For example: form cd /Usr to cd /usr
 shopt -s nocaseglob
 # Import aliases to non-interact mode of bash
-shopt -s expand_aliases
+#shopt -s expand_aliases
 
 export EDITOR=vim
 
