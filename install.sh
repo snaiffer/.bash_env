@@ -4,7 +4,7 @@ echo "Intalling..."
 
 # clone:
   cd ~
-  git clone https://github.com/snaiffer/bash_env.git bash_env
+  # git clone https://github.com/snaiffer/bash_env.git bash_env
 
 # interactive  
 ## a login shell (Ordinary terminal) for one user: 
