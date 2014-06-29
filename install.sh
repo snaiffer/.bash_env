@@ -7,9 +7,9 @@ echo "Intalling..."
   # git clone https://github.com/snaiffer/bash_env.git bash_env
 
 # save old settings files
-  mv .bash_profile .bash_profile.old
-  mv .bash_profile .bash_profile.old
-  mv .bashrc .bashrc.old
+  mv .bash_profile .bash_profile.old 2> /dev/null
+  mv .bash_profile .bash_profile.old 2> /dev/null
+  mv .bashrc .bashrc.old 2> /dev/null
 
 # interactive  
 ## a login shell (Ordinary terminal) for one user: 
