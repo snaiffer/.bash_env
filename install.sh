@@ -6,6 +6,11 @@ echo "Intalling..."
   cd ~
   # git clone https://github.com/snaiffer/bash_env.git bash_env
 
+# save old settings files
+  mv .bash_profile .bash_profile.old
+  mv .bash_profile .bash_profile.old
+  mv .bashrc .bashrc.old
+
 # interactive  
 ## a login shell (Ordinary terminal) for one user: 
   echo "source $PWD/bash_env/bash_env" >> .bash_profile
