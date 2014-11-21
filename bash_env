@@ -40,7 +40,7 @@ alias l='ls -CF'
 alias grep='grep --color=yes'
 
 # Convert to jpg
-alias tojpg='mogrify -format jpg $1'
+alias tojpg='mogrify -format jpg'
 
 # snaifServer
 export ip_snaifServer="77.91.195.205"
