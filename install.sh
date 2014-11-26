@@ -4,7 +4,7 @@ echo "Intalling..."
 
 # clone:
   cd ~
-  # git clone https://github.com/snaiffer/bash_env.git bash_env
+  # git clone https://github.com/snaiffer/.bash_env.git 
 
 # save old settings files
   if [ -f .bash_profile ]; then
@@ -16,18 +16,18 @@ echo "Intalling..."
 
 # interactive
 ## a login shell (Ordinary terminal) for one user:
-  echo "source $PWD/bash_env/bash_env" >> .bash_profile
+  echo "source $PWD/.bash_env/bash_env" >> .bash_profile
 ## a login shell (Ordinary terminal) for all users:
-  sudo bash -c ' echo "source $PWD/bash_env/bash_env" >> /etc/profile '
+  sudo bash -c ' echo "source $PWD/.bash_env/bash_env" >> /etc/profile '
 ## not a login shell (Terminals in X server) for one user:
-  echo "source $PWD/bash_env/bash_env" >> .bashrc
+  echo "source $PWD/.bash_env/bash_env" >> .bashrc
 
 # non-interactive (shell scripts)
 ## a login shell (Ordinary terminal) for one user:
-  echo "export BASH_ENV=$PWD/bash_env/bash_env" >> .bash_profile
+  echo "export BASH_ENV=$PWD/.bash_env/bash_env" >> .bash_profile
 ## a login shell (Ordinary terminal) for all users:
-  sudo bash -c ' echo "export BASH_ENV=$PWD/bash_env/bash_env" >> /etc/profile '
+  sudo bash -c ' echo "export BASH_ENV=$PWD/.bash_env/bash_env" >> /etc/profile '
 ## not a login shell (Terminals in X server) for one user:
-  echo "export BASH_ENV=$PWD/bash_env/bash_env" >> .bashrc
+  echo "export BASH_ENV=$PWD/.bash_env/bash_env" >> .bashrc
 
 echo "done."
