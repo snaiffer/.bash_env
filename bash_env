@@ -53,6 +53,4 @@ alias con_snaifServer_test="ssh snaiffer@192.168.51.51"
 # for sshfs
 export sshfs_targetPath="/stores/snaifStore_0"
 declare -x sshfs_users=( snaiffer parents )
-declare -x sshfs_paths=( /home/snaiffer/remote/snaifServer /home/parents/remote/snaifServer )  
-
-
+declare -x sshfs_paths=( /home/snaiffer/remote/snaifServer /home/parents/remote/snaifServer )
