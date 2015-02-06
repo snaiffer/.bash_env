@@ -1,9 +1,9 @@
 HowTo set: 
 
 ) clone:
-  cd ~ && git clone https://github.com/snaiffer/bash_env.git bash_env
+  cd ~ && git clone https://github.com/snaiffer/bash_env.git .bash_env
 ) install:
-  ./bash_env/install.sh
+  ~/.bash_env/install.sh
 
 HowTo set for other users with gnome-terminal:
 ) login as <new_user>
