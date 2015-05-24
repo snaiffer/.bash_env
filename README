@@ -1,11 +1,11 @@
 HowTo set: 
 
 ) clone:
-  cd ~ && git clone https://github.com/snaiffer/bash_env.git .bash_env
+  git clone https://github.com/snaiffer/bash_env.git ~/.bash_env
 ) install:
   ~/.bash_env/install.sh
 
 HowTo set for other users with gnome-terminal:
 ) login as <new_user>
-)) rm .bashrc .bash_profile
+)) rm ~/.bashrc ~/.bash_profile
 )) open terminal/Edit/Profile Preferences/Title and Command/Run command as a login shell
