@@ -1,9 +1,8 @@
 # bash_env
 
 ## HowTo set:
-
 * clone:
-  `cd ~ && git clone https://github.com/snaiffer/bash_env.git .bash_env`
+  `git clone https://github.com/snaiffer/bash_env.git .bash_env`
 * install:
   `~/.bash_env/install.sh`
 
