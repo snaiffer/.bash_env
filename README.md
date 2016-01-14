@@ -12,7 +12,7 @@ Settings for bash enviroment with auto-updating by anacron from gitrepo.
   ```
   sudo ~/.bash_env/install.sh
   ```
-  We need `sudo` for anacron.
+  We need `sudo` for anacron and for editing `/etc/profile`.
 
 ## Install for other users with gnome-terminal:
 * login as other user
