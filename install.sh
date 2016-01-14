@@ -9,7 +9,7 @@ echo "Installing... "
 export path_gitrepo="`pwd`/.bash_env"
 export file_bashenv="$path_gitrepo/bash_env"
 export file_autoupdater="/etc/cron.daily/bashenv"
-export file_anacrontab="/etc/anacrontab"
+export file_crontab="/etc/crontab"
 
 # protection of rerun
 cat .bashrc | grep bash_env; if [ "$?" = "0" ]; then
@@ -42,6 +42,7 @@ echo "Applying the new settings files... "
   echo "export BASH_ENV=$file_bashenv" >> .bashrc
 
 echo -e "\n# Under you can set your own settings\n" >> .bashrc
+source $file_bashenv
 
 echo "Setting auto-updating settings from git-repo... "
 # update daily
@@ -50,7 +51,7 @@ git -C $path_gitrepo pull > /dev/null && exit 0
 " > $file_autoupdater && \
   sudo chmod +x $file_autoupdater
 # update at the computer turn on (in 1 minute)
-sudo echo -e "@reboot\t1\tbashenv\t$file_autoupdater" >> $file_anacrontab
+sudo echo -e "@reboot\t\troot\tsleep 60 && $file_autoupdater" >> $file_crontab
 
 echo -e "done.\n"
 echo -e "NOTE:\tYour own settigns you can set in the bottom of ~/.bashrc\n"
