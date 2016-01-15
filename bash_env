@@ -43,12 +43,10 @@ alias grep='grep --color=yes'
 alias tojpg='mogrify -format jpg'
 
 # snaifServer
-export ip_snaifServer="77.91.195.205"
-export ip_snaifServer_local="192.168.1.111"
+export ip_snaifServer="192.168.1.38"
+#export ip_snaifServer="77.91.195.205"
 export portssh_snaifServer="2002"
 alias con_snaifServer="ssh -p $portssh_snaifServer snaiffer@$ip_snaifServer"
-alias con_snaifServer_local="ssh -p $portssh_snaifServer snaiffer@$ip_snaifServer_local"
-alias con_snaifServer_test="ssh snaiffer@192.168.51.51"
 
 # for sshfs
 export sshfs_targetPath="/stores/snaifStore_0"

@@ -1,6 +1,5 @@
 # bash_env
 
-## Description
 Settings for bash enviroment with auto-updating by cron from gitrepo.
 
 ## Install
