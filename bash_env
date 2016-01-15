@@ -1,3 +1,5 @@
+
+###### Variable settings #####
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -25,9 +27,10 @@ shopt -s cdspell
 shopt -s nocaseglob
 
 export EDITOR=vim
+####################################################################################
 
-export PATH="${PATH}:/usr/bin/added/"
 
+##### Command settings #####
 # If the last character of the alias value is a space or tab character, then the next command word following the alias is also checked for alias expansion
 alias sudo='sudo '  # for working commands like "sudo ll" etc.
 
@@ -42,7 +45,11 @@ alias grep='grep --color=yes'
 # Convert to jpg
 alias tojpg='mogrify -format jpg'
 
-# snaifServer
+alias myip='ip addr | grep "inet " | grep -v " lo" | sed "s/.*inet\ //" | sed "s/\/.*//"'
+####################################################################################
+
+
+##### snaifServer #####
 export ip_snaifServer="192.168.1.38"
 #export ip_snaifServer="77.91.195.205"
 export portssh_snaifServer="2002"
@@ -56,3 +63,4 @@ declare -x sshfs_paths=( /home/snaiffer/remote/snaifServer /home/parents/remote/
 export attach_dir='/home/snaiffer/snaifServer/' # using relative path '~/snaifServer' cause an error in sshfs !
 alias attach_snaifServer='mkdir $attach_dir &> /dev/null; sshfs -p $portssh_snaifServer snaiffer@$ip_snaifServer:$sshfs_targetPath $attach_dir && echo -e "\n snaifServer is connected to $attach_dir \n"'
 alias detach_snaifServer='fusermount -u $attach_dir'
+####################################################################################
