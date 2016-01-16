@@ -50,7 +50,7 @@ alias myip='ip addr | grep "inet " | grep -v " lo" | sed "s/.*inet\ //" | sed "s
 
 
 ##### snaifServer #####
-export ip_snaifServer="192.168.1.38"
+export ip_snaifServer="192.168.1.2"
 #export ip_snaifServer="77.91.195.205"
 export portssh_snaifServer="2002"
 alias con_snaifServer="ssh -p $portssh_snaifServer snaiffer@$ip_snaifServer"
