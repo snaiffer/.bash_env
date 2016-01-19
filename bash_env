@@ -46,6 +46,10 @@ alias grep='grep --color=yes'
 alias tojpg='mogrify -format jpg'
 
 alias myip='ip addr | grep "inet " | grep -v " lo" | sed "s/.*inet\ //" | sed "s/\/.*//"'
+
+# Calculate size of each folder in the current dir
+alias duforeach='for i in $(ls -a | sed "/^\.$/d" | sed "/^\.\.$/d"); do du -hs $i; done'
+
 ####################################################################################
 
 
