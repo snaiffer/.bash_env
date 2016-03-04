@@ -2,11 +2,12 @@
 
 echo "Installing... "
 
+export dir_home=`eval echo "~$SUDO_USER"`
 # clone:
-  cd ~
+  cd $dir_home
   # git clone https://github.com/snaiffer/.bash_env.git
 
-export path_gitrepo="`pwd`/.bash_env"
+export path_gitrepo="$dir_home/.bash_env"
 export file_bashenv="$path_gitrepo/bash_env"
 export file_autoupdater="/etc/cron.daily/bashenv"
 export file_crontab="/etc/crontab"
