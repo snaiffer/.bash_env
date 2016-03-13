@@ -64,7 +64,7 @@ export sshfs_targetPath="/stores/snaifStore_0"
 declare -x sshfs_users=( snaiffer parents )
 declare -x sshfs_paths=( /home/snaiffer/remote/snaifServer /home/parents/remote/snaifServer )
 
-export attach_dir='/home/snaiffer/snaifServer/' # using relative path '~/snaifServer' cause an error in sshfs !
-alias attach_snaifServer='mkdir $attach_dir &> /dev/null; sshfs -p $portssh_snaifServer snaiffer@$ip_snaifServer:$sshfs_targetPath $attach_dir && echo -e "\n snaifServer is connected to $attach_dir \n"'
-alias detach_snaifServer='fusermount -u $attach_dir'
+export mount_dir='/home/snaiffer/snaifServer/' # using relative path '~/snaifServer' cause an error in sshfs !
+alias mount_snaifServer='mkdir $mount_dir &> /dev/null; sshfs -p $portssh_snaifServer snaiffer@$ip_snaifServer:$sshfs_targetPath $mount_dir && echo -e "\n snaifServer is connected to $mount_dir \n"'
+alias umount_snaifServer='fusermount -u $mount_dir'
 ####################################################################################
