@@ -57,17 +57,17 @@ alias mdv='/usr/bin/terminal_markdown_viewer/mdv.py -t "Beyond social reset"'
 
 
 ##### snaifServer #####
-export ip_snaifServer="192.168.1.2"
+#export ip_snaifServer="192.168.1.2"
 #export ip_snaifServer="77.91.195.205"
+export ip_snaifServer="95.181.142.127"
+
 export portssh_snaifServer="2002"
 alias con_snaifServer="ssh -p $portssh_snaifServer snaiffer@$ip_snaifServer"
 
 # for sshfs
 export sshfs_targetPath="/stores/snaifStore_0"
-declare -x sshfs_users=( snaiffer parents )
-declare -x sshfs_paths=( /home/snaiffer/remote/snaifServer /home/parents/remote/snaifServer )
 
-export mount_dir='/home/snaiffer/snaifServer/' # using relative path '~/snaifServer' cause an error in sshfs !
+export mount_dir="$HOME/snaifServer/" # using relative path '~/snaifServer' cause an error in sshfs !
 alias mount_snaifServer='mkdir $mount_dir &> /dev/null; sshfs -p $portssh_snaifServer snaiffer@$ip_snaifServer:$sshfs_targetPath $mount_dir && echo -e "\n snaifServer is connected to $mount_dir \n"'
 alias umount_snaifServer='fusermount -u $mount_dir'
 ####################################################################################
