@@ -54,5 +54,5 @@ git -C $path_gitrepo pull > /dev/null && exit 0
 sudo echo -e "@reboot\t\troot\tsleep 60 && $file_autoupdater" >> $file_crontab
 
 echo -e "done.\n"
-echo -e "NOTE:\tYour own settigns you can set in the bottom of ~/.bashrc
-\tNow you have to relogin to get changings\n"
+echo -e "NOTE:\tYou can set your own settigns in the bottom of ~/.bashrc
+\tYou have to relogin to get changings now\n"
