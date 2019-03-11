@@ -27,6 +27,8 @@ shopt -s cdspell
 shopt -s nocaseglob
 
 export EDITOR=vim
+
+tabs 2
 ####################################################################################
 
 
