@@ -1,4 +1,7 @@
 
+# If not running interactively, don't do anything
+[ -z "$PS1" ] && return
+
 ###### Variable settings #####
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -23,6 +26,18 @@ shopt -s checkwinsize
 # https://misc.flogisoft.com/bash/tip_colors_and_formatting
 PS1="\[\e[0;96m\]\D{%T} \[\e[0;33m\]\h@\u \[\e[1;37m\]\w \n\`if [ \$? = 0 ]; then echo \[\e[32m\]^_^\[\e[0m\]; else echo \[\e[31m\]O_o\[\e[0m\]; fi\`\\$ "
 
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
 # For correcting misprint in command argument. For example: form cd /user to cd /usr
 shopt -s cdspell
 # For correcting misprint in command argument. For example: form cd /Usr to cd /usr
@@ -40,8 +55,8 @@ alias sudo='sudo '  # for working commands like "sudo ll" etc.
 
 alias git_ac='git add --no-ignore-removal . && git commit -a -m'
 
-alias ls='ls --color=auto'
 alias ll='ls -lah'
+alias la='ls -A'
 alias l='ls -CF'
 
 alias grep='grep --color=yes'
