@@ -73,12 +73,18 @@ alias duforeach='for i in *; do du -hs "$i"; done'
 
 
 ##### snaifServer #####
-#export ip_snaifServer="192.168.1.2"
-#export ip_snaifServer="77.91.195.205"
+
+# snaifServer
 export ip_snaifServer="95.181.142.127"
 
 export portssh_snaifServer="2002"
 alias con_snaifServer="ssh -p $portssh_snaifServer snaiffer@$ip_snaifServer"
+
+# snaifServer2
+export ip_snaifServer2="93.179.83.171"
+
+export portssh_snaifServer2="2002"
+alias con_snaifServer2="ssh -p $portssh_snaifServer2 snaiffer@$ip_snaifServer2"
 
 # for sshfs
 export sshfs_targetPath="/stores/snaifStore_0"
