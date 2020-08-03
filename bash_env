@@ -92,8 +92,12 @@ alias con_snaifServer2="ssh -p $portssh_snaifServer2 snaiffer@$ip_snaifServer2"
 
 # for sshfs
 export sshfs_targetPath="/stores/snaifStore_0"
-
 export mount_dir="$HOME/snaifServer/" # using relative path '~/snaifServer' cause an error in sshfs !
 alias mount_snaifServer='mkdir $mount_dir &> /dev/null; sshfs -p $portssh_snaifServer snaiffer@$ip_snaifServer:$sshfs_targetPath $mount_dir && echo -e "\n snaifServer is connected to $mount_dir \n"'
 alias umount_snaifServer='fusermount -u $mount_dir'
+
+export sshfs_targetPath="/stores/snaifStore_1"
+export mount_dir="$HOME/snaifServer2/" # using relative path '~/snaifServer' cause an error in sshfs !
+alias mount_snaifServer2='mkdir $mount_dir &> /dev/null; sshfs -p $portssh_snaifServer2 snaiffer@$ip_snaifServer2:$sshfs_targetPath $mount_dir && echo -e "\n snaifServer is connected to $mount_dir \n"'
+alias umount_snaifServer2='fusermount -u $mount_dir'
 ####################################################################################
