@@ -70,7 +70,7 @@ alias myip='ip addr | grep "inet " | grep -v " lo" | sed "s/.*inet\ //" | sed "s
 # Calculate size of each folder in the current dir
 alias duforeach='for i in *; do du -hs "$i"; done'
 
-alias rsync='rsync -ah --info=progress2'
+alias rsync='rsync -ah --info=progress2 --no-inc-recursive'
 alias rm='rm -Rf'
 
 ####################################################################################
