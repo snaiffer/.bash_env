@@ -79,7 +79,7 @@ alias rm='rm -Rf'
 ##### snaifServer #####
 
 # snaifServer
-export ip_snaifServer="95.181.142.127"
+export ip_snaifServer="95.181.246.219"
 
 export portssh_snaifServer="2002"
 alias con_snaifServer="ssh -p $portssh_snaifServer snaiffer@$ip_snaifServer"
