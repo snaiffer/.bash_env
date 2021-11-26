@@ -73,6 +73,10 @@ alias duforeach='for i in *; do du -hs "$i"; done'
 alias rsync='rsync -ah --info=progress2 --no-inc-recursive'
 alias rm='rm -Rf'
 
+# Copy output to xclibboard
+# Ex.: cat file.txt | tobuffer
+alias tobuffer='xclip -sel c'
+
 ####################################################################################
 
 
