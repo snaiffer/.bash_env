@@ -81,6 +81,14 @@ alias rm='rm -Rf'
 # Ex.: cat file.txt | tobuffer
 alias tobuffer='xclip -sel c'
 
+# buffer
+## XML format
+alias buffer_xmlformat='xclip -se c -o | xmllint --format - | xclip -sel c'
+alias buffer_jsonformat='xclip -se c -o | jq . | xclip -sel c'
+
+# open kate in a new window instead a new tab
+alias kate="kate -n"
+
 ####################################################################################
 
 
