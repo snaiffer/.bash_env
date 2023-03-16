@@ -82,9 +82,8 @@ alias rm='rm -Rf'
 alias tobuffer='xclip -sel c'
 
 # buffer
-## XML format
-alias buffer_xmlformat='xclip -se c -o | xmllint --format - | xclip -sel c'
-alias buffer_jsonformat='xclip -se c -o | jq . | xclip -sel c'
+alias buffer_xmlformat='xclip -se c -o | xmllint --format - | xclip -sel c || echo "XML wrong format" | xclip -sel c'
+alias buffer_jsonformat='xclip -se c -o | jq . | xclip -sel c || echo "JSON wrong format" | xclip -sel c'
 
 # open kate in a new window instead a new tab
 alias kate="kate -n"
