@@ -28,7 +28,7 @@ parse_git_branch() {
 # Input line
 # https://bneijt.nl/blog/post/add-a-timestamp-to-your-bash-prompt/
 # https://misc.flogisoft.com/bash/tip_colors_and_formatting
-PS1="\[\e[0;96m\]\D{%T} \[\e[0;33m\]\u@\h \[\e[1;37m\]\w \n\`if [ \$? = 0 ]; then echo \[\e[32m\]^_^\[\e[0m\]; else echo \[\e[31m\]O_o\[\e[0m\]; fi\`\[\033[36m\]\$(parse_git_branch)\[\033[00m\]\\$ "
+PS1="\[\e[0;96m\]\D{%T} \[\e[0;33m\]\u@\h:\[\e[1;37m\]\w \n\`if [ \$? = 0 ]; then echo \[\e[32m\]^_^\[\e[0m\]; else echo \[\e[31m\]O_o\[\e[0m\]; fi\`\[\033[36m\]\$(parse_git_branch)\[\033[00m\]\\$ "
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
