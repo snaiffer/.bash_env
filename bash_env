@@ -42,6 +42,9 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+# change color for file names prefixing any content line
+export GREP_COLORS='fn=38;5;72'
+
 # For correcting misprint in command argument. For example: form cd /user to cd /usr
 shopt -s cdspell
 # For correcting misprint in command argument. For example: form cd /Usr to cd /usr
