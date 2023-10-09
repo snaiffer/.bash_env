@@ -96,14 +96,17 @@ alias kate="kate -n"
 
 ##### snaifServer #####
 
+export ip_parents="93.179.83.171"
+export ip_tower="93.179.87.218"
+
 # snaifServer
-export ip_snaifServer="95.181.246.219"
+export ip_snaifServer="$ip_tower"
 
 export portssh_snaifServer="2002"
 alias con_snaifServer="ssh -p $portssh_snaifServer snaiffer@$ip_snaifServer"
 
 # snaifServer2
-export ip_snaifServer2="93.179.83.171"
+export ip_snaifServer2="turned_off"
 
 export portssh_snaifServer2="2002"
 alias con_snaifServer2="ssh -p $portssh_snaifServer2 snaiffer@$ip_snaifServer2"
