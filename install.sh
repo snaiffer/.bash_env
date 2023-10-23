@@ -9,8 +9,7 @@ export dir_home=`eval echo "~$SUDO_USER"`
 
 export path_gitrepo="$dir_home/.bash_env"
 export file_bashenv="$path_gitrepo/bash_env"
-export file_autoupdater="/etc/cron.daily/bashenv"
-export file_crontab="/etc/crontab"
+export file_autoupdater="/opt/bashenv_autoupdater.sh"
 
 # protection of rerun
 cat .bashrc | grep bash_env; if [ "$?" = "0" ]; then
@@ -46,12 +45,19 @@ echo -e "\n# Under you can set your own settings\n" >> .bashrc
 
 echo "Setting auto-updating settings from git-repo... "
 # update daily
-sudo echo "#!/bin/sh
+cat <<-EOF | sudo tee $file_autoupdater
+#!/bin/sh
 git -C $path_gitrepo pull > /dev/null && exit 0
-" > $file_autoupdater && \
+EOF
   sudo chmod +x $file_autoupdater
 # update at the computer turn on (in 1 minute)
-sudo echo -e "@reboot\t\troot\tsleep 60 && $file_autoupdater" >> $file_crontab
+crontab -l > newcron.tmp
+  echo -e "\n# every day at 12:00" >> newcron.tmp
+  echo -e "# update ~/.bash_env from git" >> newcron.tmp
+  echo -e "00 12 * * * $file_autoupdater" >> newcron.tmp
+  echo -e "@reboot sleep 60 && $file_autoupdater" >> newcron.tmp
+  crontab newcron.tmp
+  rm newcron.tmp
 
 echo -e "done.\n"
 echo -e "NOTE:\tYou can set your own settigns in the bottom of ~/.bashrc

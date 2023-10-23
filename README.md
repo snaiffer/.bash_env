@@ -11,9 +11,11 @@ Settings for bash enviroment with auto-updating by cron from gitrepo.
 1. install:
 
   ```sh
-  sudo ~/.bash_env/install.sh
+  # auth. for sudo
+  sudo echo
+  ~/.bash_env/install.sh
   ```
-  We need `sudo` for cron and for editing `/etc/profile`.
+  Note: we need `sudo` for cron and for editing `/etc/profile`.
 
 ## Install for other users with gnome-terminal:
 1. login as other user
