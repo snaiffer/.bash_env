@@ -21,7 +21,7 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-parse_git_branch() {
+function parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
@@ -90,6 +90,12 @@ alias buffer_jsonformat='xclip -se c -o | jq . | xclip -sel c || echo "JSON wron
 alias buffer_concatenate='xclip -se c -o | tr -d "\n\r" | xclip -sel c'
 # open kate in a new window instead a new tab
 alias kate="kate -n"
+
+# Connect to docker container
+# Ex.: dconn ae1b098df5cb
+function dconn() {
+    docker exec -it $1 bash
+}
 
 ####################################################################################
 
