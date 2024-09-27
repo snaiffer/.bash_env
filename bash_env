@@ -92,9 +92,22 @@ alias buffer_concatenate='xclip -se c -o | tr -d "\n\r" | xclip -sel c'
 alias kate="kate -n"
 
 # Connect to docker container
-# Ex.: dconn ae1b098df5cb
+# Ex.:
+#     dconn                   # connect to the newer container_id
+#     dconn ae1b098df5cb      # connect to specific container id
+#     dconn ae1b098df5cb 0:0  # run with user_id=0, group_id=0
 function dconn() {
-    docker exec -it $1 bash
+    container_id="$1"
+    user_map="$2"
+
+    if [[ "$1" == "" ]]; then
+        container_id=$(docker ps -a | head -n 2 | tail -n 1 | awk '{print $1}')
+    fi
+    if [[ "$2" == "" ]]; then
+        user_map="$UID:$(id -g)"
+    fi
+
+    docker exec -u $user_map -it $container_id bash
 }
 
 ####################################################################################
