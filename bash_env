@@ -93,7 +93,7 @@ alias kate="kate -n"
 
 # Connect to docker container
 # Ex.:
-#     dconn                   # connect to the newer container_id
+#     dconn                   # connect to the latest container_id
 #     dconn ae1b098df5cb      # connect to specific container id
 #     dconn ae1b098df5cb 0:0  # run with user_id=0, group_id=0
 function dconn() {
@@ -105,6 +105,11 @@ function dconn() {
     fi
     if [[ "$2" == "" ]]; then
         user_map="$UID:$(id -g)"
+    fi
+
+    if [ $(docker inspect -f '{{.State.Running}}' $container_id) = "false" ]; then
+      echo "Container $container_id is not running. Starting it now..."
+      docker start $container_id
     fi
 
     docker exec -u $user_map -it $container_id bash
