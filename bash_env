@@ -115,6 +115,21 @@ function dconn() {
     docker exec -u $user_map -it $container_id bash
 }
 
+# Execute "ssh-copy-id" before each "ssh" if the address isn't in cache
+function ssh() {
+    local cache=~/.ssh/bashrc_ssh.cache
+    for cur_arg in $@; do
+        if [[ "$cur_arg" == *@* ]]; then
+            grep "$cur_arg" $cache &> /dev/null
+            if [[ "$?" != "0" ]]; then
+                ssh-copy-id $cur_arg
+                echo $cur_arg >> $cache
+            fi
+        fi
+    done
+    $(which ssh) $@ # execute the init cmd "as is"
+}
+
 ####################################################################################
 
 
