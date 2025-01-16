@@ -116,6 +116,9 @@ function dconn() {
 }
 
 # Execute "ssh-copy-id" before each "ssh" if the address isn't in cache
+# Note:
+#   Connection string should be with "@". Like: "ssh user@host".
+#   It won't work without "@". Like: "ssh host"
 function ssh() {
     local cache=~/.ssh/bashrc_ssh.cache
     for cur_arg in $@; do
