@@ -120,12 +120,20 @@ function dconn() {
 #   Connection string should be with "@". Like: "ssh user@host".
 #   It won't work without "@". Like: "ssh host"
 function ssh() {
-    local cache=~/.ssh/bashrc_ssh.cache
+    local cache=$HOME/.ssh/bashrc_ssh.cache
+
     for cur_arg in $@; do
         if [[ "$cur_arg" == *@* ]]; then
             grep "$cur_arg" $cache &> /dev/null
             if [[ "$?" != "0" ]]; then
-                ssh-copy-id $cur_arg
+
+                # old systems don't support long keys, so we have to use shorter one.
+                local id_rsa_2048_path="$HOME/.ssh/id_rsa_2048"
+                if [ ! -f $id_rsa_2048_path ]; then
+                    ssh-keygen -t rsa -b 2048 -f $id_rsa_2048_path -N ''
+                fi
+
+                ssh-copy-id -i "${id_rsa_2048_path}.pub" $cur_arg && \
                 echo $cur_arg >> $cache
             fi
         fi
