@@ -133,7 +133,7 @@ function ssh() {
                     ssh-keygen -t rsa -b 2048 -f $id_rsa_2048_path -N ''
                 fi
 
-                ssh-copy-id -i "${id_rsa_2048_path}.pub" $cur_arg && \
+                ssh-copy-id -o IdentitiesOnly=yes -i "${id_rsa_2048_path}.pub" $cur_arg && \
                 echo $cur_arg >> $cache
             fi
         fi
