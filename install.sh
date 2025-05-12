@@ -29,7 +29,7 @@ echo "Applying the new settings files... "
 ## a login shell (Ordinary terminal) for one user:
   echo "source $file_bashenv" >> .bash_profile
 ## a login shell (Ordinary terminal) for all users:
-  sudo echo "source $file_bashenv" >> /etc/profile
+  echo "source $file_bashenv" | sudo tee -a /etc/profile > /dev/null
 ## not a login shell (Terminals in X server) for one user:
   echo "source $file_bashenv" >> .bashrc
 
@@ -37,7 +37,7 @@ echo "Applying the new settings files... "
 ## a login shell (Ordinary terminal) for one user:
   echo "export BASH_ENV=$file_bashenv" >> .bash_profile
 ## a login shell (Ordinary terminal) for all users:
-  sudo echo "export BASH_ENV=$file_bashenv" >> /etc/profile
+  echo "export BASH_ENV=$file_bashenv" | sudo tee -a /etc/profile > /dev/null
 ## not a login shell (Terminals in X server) for one user:
   echo "export BASH_ENV=$file_bashenv" >> .bashrc
 
