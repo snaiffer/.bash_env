@@ -68,8 +68,10 @@ alias git_ac='git add --no-ignore-removal . && git commit -a -m'
 # -f  force
 # -d  include directories
 #
-# useful: add "-e <file_to_exclude>" --exclude from removing
-alias git_clean='git clean -xfdn'
+# Useful: add:
+#   -e <file_to_exclude>  # exclude from removing
+#   -n                    # dry-run (just to show what would be removed)
+alias git_clean='git clean -xfd'
 
 alias ll='ls -lah'
 alias la='ls -A'
