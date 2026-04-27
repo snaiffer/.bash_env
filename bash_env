@@ -63,6 +63,14 @@ alias sudo='sudo '  # for working commands like "sudo ll" etc.
 
 alias git_ac='git add --no-ignore-removal . && git commit -a -m'
 
+# Removes all untracked files/directories, including .gitignored ones
+# -x  include ignored files
+# -f  force
+# -d  include directories
+#
+# useful: add "-e <file_to_exclude>" --exclude from removing
+alias git_clean='git clean -xfdn'
+
 alias ll='ls -lah'
 alias la='ls -A'
 alias l='ls -CF'
