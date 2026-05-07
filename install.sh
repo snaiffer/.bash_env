@@ -51,7 +51,7 @@ git -C $path_gitrepo pull > /dev/null && exit 0
 EOF
   sudo chmod +x $file_autoupdater
 # update at the computer turn on (in 1 minute)
-crontab -l > newcron.tmp
+crontab -l 2>/dev/null > newcron.tmp
   echo -e "\n# every day at 12:00" >> newcron.tmp
   echo -e "# update ~/.bash_env from git" >> newcron.tmp
   echo -e "00 12 * * * $file_autoupdater" >> newcron.tmp
