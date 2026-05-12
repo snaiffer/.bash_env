@@ -54,6 +54,11 @@ export EDITOR=vim
 
 #tabs 2 # Был случай, что данный параметр приводил к ошибке при выполнение syncfrom_pc_snaifServer
 tabs 2
+
+# ClaudeCode
+export CLAUDE_CODE_EFFORT_LEVEL=max
+export ANTHROPIC_MODEL=opus[1m]
+
 ####################################################################################
 
 
