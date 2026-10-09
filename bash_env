@@ -127,7 +127,7 @@ function dconn() {
       docker start $container_id
     fi
 
-    docker exec -u $user_map -it $container_id bash
+    docker exec -u $user_map -e CONAN_LOGIN_USERNAME -e CONAN_PASSWORD -it $container_id bash
 }
 
 # Execute "ssh-copy-id" before each "ssh" if the address isn't in cache
